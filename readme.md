@@ -29,5 +29,5 @@
     
 ### Installing Dependencies
 
- ` $ npm install ` 
+ ` $ npm install `  
         This script installs all the dependencies required for the app to work   
