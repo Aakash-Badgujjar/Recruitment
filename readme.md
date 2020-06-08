@@ -24,7 +24,7 @@
     
 ###  Available Scripts
     
-     ` $ npm start `  
+ ` $ npm start `  
         This srcipt will concurrently start the react app and also starts the json server for serving data
     
 ### Installing Dependencies
