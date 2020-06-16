@@ -1,74 +1,47 @@
-import React,{Component} from 'react';
-import {ListGroup, ListGroupItem, Button} from 'react-bootstrap';
+import React, {Component} from 'react';
+import {Button, ListGroup, ListGroupItem} from 'react-bootstrap';
 import './Cards.css'
 
 
+export default class Cards extends Component {
+
+    state = {
+        show: false
+    }
+    info = [["Description", this.props.description], ["Company", this.props.company]]
+    infoExtended = [...this.info, ["Address", this.props.address]]
 
 
-export default class Cards extends Component{
+    render() {
+        return (
+            <div className="card text-center">
+                <div style={{height:"400px"}}>
+                    <div className='overflow'>
+                        {(!this.state.show) ?
+                            <img src={this.props.img} width="50px" height="120px" alt="Undefined"
+                                 className='card-img-top'/>
+                                 : ""}
+                    </div>
+                    <div className="card-body text-dark ">
+                        <h4 className="card-title">{this.props.name}</h4>
+                        <div className="card-text text-secondary ">
 
-
-render(){
-    return (
-        // <div>
-        // <p>"Sameer</p>  
-        // <Card style={{ width: '16rem' }}>
-        //     <Card.Img variant="top" src={this.props.img} />
-        //     <Card.Body>
-        //         <Card.Title>{this.props.name}</Card.Title>
-        //     </Card.Body>
-        //     <ListGroup className="list-group-flush">
-        //         <ListGroupItem>Description: {this.props.description}</ListGroupItem>
-        //         <ListGroupItem>Company: {this.props.company}</ListGroupItem>
-        //         <ListGroupItem>Address: {this.props.address}</ListGroupItem>
-        //     </ListGroup>
-        //     <Card.Body>
-        //         <p> <Button variant="primary">Show more</Button></p>
-        //     </Card.Body>
-        // </Card>
-        
-       // </div>
-
-        <div className = "card text-center">
-            <div className='overflow'>
-            <img src = {this.props.img} alt = "Undefined" className='card-img-top'></img>
+                            <ListGroup className="list-group-flush">
+                                {(this.state.show) ? this.infoExtended.map((v) =>
+                                    <ListGroupItem>{v[0]}: {v[1]}</ListGroupItem>) : this.info.map((v) =>
+                                    <ListGroupItem>{v[0]}: {v[1]}</ListGroupItem>)}
+                            </ListGroup>
+                        </div>
+                    </div>
+                </div>
+                <Button variant="primary" className="mt-auto" onClick={() => {
+                    this.setState({show: !this.state.show})
+                }}>{(this.state.show) ? "Show Less" : "Show More"}</Button>
             </div>
-            <div className = "card-body.text-dark">
-            <h4 className = "card-title">{this.props.name}</h4>
-            <p className = "card-text text-secondary">
-            
-            <ListGroup className="list-group-flush">
-                <ListGroupItem>Description: {this.props.description}</ListGroupItem>
-                <ListGroupItem>Company: {this.props.company}</ListGroupItem>
-                <ListGroupItem>Address: {this.props.address}</ListGroupItem>
-            </ListGroup>
-            </p>
-            <Button variant="primary">Show more</Button>
-            </div>
-        </div>
 
-//         <Card  border="success" style={{ width: '18rem' }}>
-//   <div class="fill"><Card.Img variant="top" src={this.props.img} /></div>
-//   <Card.Body>
-//     <Card.Title>Card Title</Card.Title>
-//     <Card.Text>
-//       Some quick example text to build on the card title and make up the bulk of
-//       the card's content.
-//     </Card.Text>
-//   </Card.Body>
-//   <ListGroup className="list-group-flush">
-//     <ListGroupItem>Cras justo odio</ListGroupItem>
-//     <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-//     <ListGroupItem>Vestibulum at eros</ListGroupItem>
-//   </ListGroup>
-//   <Card.Body>
-//     <Card.Link href="#">Card Link</Card.Link>
-//     <Card.Link href="#">Another Link</Card.Link>
-//   </Card.Body>
-// </Card>
 
-    )
+        )
 
-  }
+    }
 
 }

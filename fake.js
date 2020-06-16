@@ -5,7 +5,7 @@ module.exports = function(){
         const profile = {
             image: faker.image.avatar(),
             name: faker.name.findName(),
-            description: faker.name.jobDescriptor(),
+            description: faker.name.jobTitle(),
             company: faker.company.companyName(),
             address: faker.address.streetAddress() + faker.address.city()
 

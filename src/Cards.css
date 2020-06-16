@@ -3,7 +3,7 @@ body {
   }
    
   .card {
-    width: 20rem;
+    width: 250px;
   }
    
   .card:hover {
