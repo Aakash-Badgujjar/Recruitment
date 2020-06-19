@@ -30,4 +30,4 @@
 ### Installing Dependencies
 
  ` $ npm install `  
-        This script installs all the dependencies required for the app to work         
+        This script installs all the dependencies required for the app to work 

@@ -1,7 +1,7 @@
 module.exports = function(){
     const faker = require("faker");
     let users = [];
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 500; i++) {
         const profile = {
             image: faker.image.avatar(),
             name: faker.name.findName(),

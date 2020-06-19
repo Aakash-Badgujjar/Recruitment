@@ -27,7 +27,6 @@
   flex:1 1 auto;
   border:1px blue solid;
   text-align:center;
-
-  margin:1em;  /* and that, will result in a 10px gap */
+  margin:1em;
 }
 

@@ -15,10 +15,10 @@ export default class Cards extends Component {
     render() {
         return (
             <div className="card text-center">
-                <div style={{height:"400px"}}>
+                <div style={{height:"380px"}}>
                     <div className='overflow'>
                         {(!this.state.show) ?
-                            <img src={this.props.img} width="50px" height="120px" alt="Undefined"
+                            <img src={this.props.img} width="50px" height="130px" alt="Undefined"
                                  className='card-img-top'/>
                                  : ""}
                     </div>

@@ -2,24 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Cards from './Cards'
 import './Box.css'
-import SelectSearch from 'react-select-search';
-import './Search.css'
 import { BallBeat } from 'react-pure-loaders';
 
-
-// function renderFriend(props, option, snapshot, className) {
-//     const imgStyle = {
-//         borderRadius: '50%',
-//         verticalAlign: 'middle',
-//         marginRight: 10,
-//     };
-//     console.log("rendering");
-//     return (
-//         <button {...props} className={className} type="button">
-//             <span><img alt="" style={imgStyle} width="32" height="32" src={option.image} /><span>{option.name}</span></span>
-//         </button>
-//     );
-// }
 
 export default class Search extends Component {
     constructor(props) {
@@ -40,7 +24,6 @@ export default class Search extends Component {
             users:this.state.allUsers.filter( user => user.name.match(event.target.value))})
     }
     fetchResponse = () => {
-        //console.log('Component Did mount');
         axios.get('http://localhost:4000/users')
             .then(result => this.setState({
                 allUsers: result.data,
@@ -79,8 +62,6 @@ export default class Search extends Component {
             return (<div>
                 <div className = "search">
                 <input
-                    // className="select-search"
-                    // options={users}
                     name="searchField"
                     value={this.state.searchField}
                     onChange={this.handleSearch}
